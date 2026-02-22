@@ -1,0 +1,177 @@
+:root {
+    --peach-bg: #FAD5BB; 
+    --robot-coral: #d18a7a;
+    --dark-brown: #5a403a;
+    --mint-accent: #d4e8e1;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background-color: var(--peach-bg);
+    color: var(--dark-brown);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navigation --- */
+header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-brown);
+    font-weight: 600;
+}
+
+/* High Visibility Contact Button */
+.btn-contact {
+    background-color: var(--dark-brown);
+    color: var(--white) !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: var(--robot-coral);
+    transform: translateY(-2px);
+}
+
+/* --- Hero Section --- */
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    padding: 60px 0;
+    gap: 50px;
+}
+
+.content {
+    flex: 1;
+}
+
+/* Small label styling */
+.badge {
+    background: var(--mint-accent);
+    color: var(--dark-brown);
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Main Large Heading */
+h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+h1 span {
+    color: var(--robot-coral);
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    max-width: 520px;
+    color: var(--dark-brown);
+    opacity: 0.9;
+}
+
+/* --- Image & Animations --- */
+.image-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.floating-bot {
+    width: 100%;
+    max-width: 450px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.shadow {
+    width: 180px;
+    height: 20px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    filter: blur(6px);
+    margin-top: -10px;
+    animation: shadowPulse 3s ease-in-out infinite;
+}
+
+/* Main CTA Button */
+.btn-primary {
+    background: var(--robot-coral);
+    color: white;
+    padding: 18px 45px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    box-shadow: 0 10px 15px rgba(209, 138, 122, 0.3);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+@keyframes shadowPulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(0.7); opacity: 0.1; }
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 992px) {
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    h1 { font-size: 3rem; }
+    p { margin: 0 auto 30px; }
+}
